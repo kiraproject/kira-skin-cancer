@@ -68,7 +68,7 @@ Web App was made by using several Web Technologies, major of then are listed bel
 
 - React
 - Node
-- Express
+- Express Js
 - Mongo DB
 - HTML
 - CSS/SCSS
