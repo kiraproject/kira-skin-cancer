@@ -20,7 +20,7 @@ var commentRoutes = require("./routes/comments"),
 
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://skull:1234@cluster0-qltfa.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true } );
+mongoose.connect("mongodb+srv://*****************",{ useNewUrlParser: true } );
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
