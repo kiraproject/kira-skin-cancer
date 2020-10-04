@@ -1,0 +1,380 @@
+#info-actinic {
+  min-height: 100vh;
+
+  & .header {
+    text-align: center;
+    & h1 {
+      font-size: 3.5rem;
+      font-weight: normal;
+    }
+  }
+
+  & .first-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4rem;
+
+    & .left {
+      order: 2;
+    }
+    & .right {
+      margin-left: 0rem;
+      order: 1;
+      & .title {
+        margin-bottom: 2rem;
+        justify-content: flex-start;
+        & .side-line {
+          margin-left: 0rem;
+        }
+      }
+      & .lead-text {
+        letter-spacing: 0.6px;
+        color: $grey-color3;
+        font-size: 1.05rem;
+        margin: 2rem 0;
+      }
+    }
+  }
+
+  & .second-section {
+    height: 40vh;
+    width: 90%;
+    background-color: rgba($color: $pink-color, $alpha: 0.3);
+    margin-top: 5rem;
+    & .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      & img {
+        height: 250px;
+        width: auto;
+      }
+    }
+  }
+
+  & .swiper-section {
+    margin: 2rem 0;
+    height: auto;
+    & .swiper {
+      height: 80%;
+      margin-bottom: 5rem;
+      & .title-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+          height: 60px;
+          width: auto;
+          margin-right: 2rem;
+        }
+      }
+
+      & .swiper-div {
+        height: 350px;
+        width: 420px;
+        margin: 0 auto;
+        & .swiper-img {
+          height: 350px;
+          width: 500px;
+          object-fit: inherit;
+        }
+        & .swiper-btns {
+          display: flex;
+          justify-content: center;
+          & i {
+            font-size: 1.7rem;
+            color: $pink-color;
+            margin: 0 0.7rem;
+            cursor: pointer;
+            @include trans-ease;
+
+            &:hover {
+              transform: scale(0.9);
+              color: rgba($color: $pink-color, $alpha: 0.9);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .third-section {
+    & .title {
+      margin-top: 5rem;
+    }
+    & .tabs {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      & .tab {
+        cursor: pointer;
+        @include trans-ease;
+        &:hover {
+          background-color: rgba($color: $pink-color, $alpha: 0.1);
+          transform: translateY(-5%);
+        }
+
+        &.selected {
+          border-bottom: 2px solid $pink-color;
+        }
+      }
+    }
+
+    & .info {
+      border: 1px solid $pink-color;
+
+      & .warning-signs,
+      & .risk-signs,
+      & .treatment {
+        padding: 1rem 2rem;
+      }
+      & .warning-signs & .signs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      & .risk-signs {
+        h3 {
+          text-transform: uppercase;
+        }
+
+        & .risk {
+          & h4 {
+            font-weight: normal;
+            & i {
+              font-size: 0.8rem;
+            }
+            span {
+              margin-left: 1rem;
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+
+      & .treatment {
+        & ul {
+          list-style: none;
+          & i {
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+          }
+        }
+        & .external-ref {
+          & span {
+            font-family: "Ubuntu", sans-serif;
+          }
+          @include trans-ease;
+          &:hover {
+            transform: translateY(-9%);
+          }
+          &:hover {
+            color: $pink-color;
+          }
+          &:hover > span {
+            color: $grey-color3;
+          }
+        }
+
+        // treatement of skin disease
+        & .title-wrapper {
+          display: flex;
+          align-items: center;
+          & img {
+            height: 60px;
+            width: auto;
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  & .faqs-section {
+    & .faq {
+      display: flex;
+      margin-bottom: 4rem;
+      flex-direction: column;
+      & .question {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0 2rem;
+        & img {
+          height: 70px;
+          width: auto;
+          margin-right: 1rem;
+        }
+      }
+      & .answer {
+        & .bullet-points {
+          & i {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+
+    & .left-faq {
+      ::selection {
+        background-color: rgba($color: $green-color, $alpha: 0.9);
+      }
+      border: 1.5px solid $green-color;
+      box-shadow: 0.5px -1px 30px 2px rgba($color: $green-color, $alpha: 0.12);
+      & .question {
+        align-self: flex-start;
+      }
+    }
+    & .right-faq {
+      ::selection {
+        background-color: rgba($color: $purple-color, $alpha: 0.9);
+      }
+      border: 1.5px solid $purple-color;
+      box-shadow: 0.5px -1px 30px 2px rgba($color: $purple-color, $alpha: 0.12);
+      & .question {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #info-actinic {
+    min-height: 100vh;
+
+    & .header {
+      text-align: center;
+      & h1 {
+        font-size: 2.1rem;
+        font-weight: normal;
+      }
+    }
+
+    & .first-section {
+      flex-direction: column;
+
+      & .right {
+        & .lead-text {
+          margin: 1.5rem 0;
+        }
+      }
+    }
+
+    & .second-section {
+      height: auto;
+      width: 100%;
+      margin-top: 5rem;
+      & .container {
+        flex-direction: column;
+        & img {
+          height: 85px;
+        }
+
+        & .right {
+          & h1 {
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+          }
+          & h3:first-child {
+            margin: 1.3rem 0 0rem;
+          }
+        }
+      }
+    }
+    & .swiper-section {
+      margin: 2rem 0;
+      height: auto;
+      width: 100%;
+      padding: 0 0 3rem;
+      & .swiper {
+        height: 80%;
+        margin-bottom: 0rem;
+
+        & .title-wrapper {
+          & img {
+            height: 35px;
+            margin-right: 1rem;
+          }
+        }
+
+        & .swiper-div {
+          height: 200px;
+          width: 80%;
+          & .swiper-img {
+            height: 200px;
+          }
+          & .swiper-btns {
+            margin-top: 01rem;
+            & i {
+              font-size: 1.3rem;
+              margin: 0 0.5rem;
+            }
+          }
+        }
+      }
+    }
+    & .third-section {
+      & .tabs {
+        & .tab {
+          padding: 1rem 0.5rem;
+          & h3 {
+            font-size: 0.9rem;
+          }
+        }
+        // For skin-disease only
+        &.skin-disease-tabs {
+          display: flex;
+          flex-wrap: wrap;
+          & .tab {
+            margin: 0.1rem;
+          }
+        }
+      }
+
+      & .info {
+        & .warning-signs,
+        & .risk-signs,
+        & .treatment {
+          padding: 0.5rem 0.5rem;
+
+          // For skin disease only
+          & .title-wrapper {
+            & img {
+              height: 35px;
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    & .faqs-section {
+      & .allfaqs {
+        padding: 2rem 0rem;
+      }
+      & .faq {
+        padding: 2rem 1rem;
+        & .question {
+          & img {
+            height: 55px;
+          }
+        }
+        & .answer {
+          & p {
+            font-size: 0.9rem;
+          }
+          & .bullet-points {
+            & i {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+
+      & .right-faq {
+        & .question {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}

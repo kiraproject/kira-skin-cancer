@@ -1,0 +1,165 @@
+#navbar {
+  height: 12vh;
+  display: flex;
+  padding: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 5px 5px rgba(172, 171, 171, 0.1);
+
+  & .logo {
+    & a {
+      text-decoration: none;
+      color: $pink-color;
+    }
+  }
+  & .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .link {
+      padding: 0 1.5rem;
+      & a {
+        color: $grey-color3;
+        text-decoration: none;
+        @include trans-ease;
+
+        @include trans-ease(300ms, ease);
+        &:hover {
+          color: $pink-color;
+        }
+      }
+    }
+  }
+
+  & .nav-toggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  $nav-toggle-bar-height: 0.135rem;
+  $nav-toggle-bar-width: 1.25rem;
+  $nav-toggle-z-index: 3;
+  $nav-background: #28dde0;
+  $nav-z-index: 1;
+
+  /* mixins */
+  @mixin center-vertically($position: absolute) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @mixin transform($transform) {
+    -ms-transform: $transform;
+    -webkit-transform: $transform;
+    transform: $transform;
+  }
+
+  #navbar {
+    & .logo a h2 {
+      font-size: 1.4rem;
+    }
+    & .nav-toggle {
+      display: block;
+      cursor: pointer;
+      height: 5 * $nav-toggle-bar-height;
+      right: 2rem;
+      position: fixed;
+      // top: 2rem;
+      width: $nav-toggle-bar-width;
+      z-index: $nav-toggle-z-index;
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .nav-toggle-bar,
+      .nav-toggle-bar::after,
+      .nav-toggle-bar::before {
+        @include center-vertically;
+        background: $pink-color;
+        content: "";
+        height: $nav-toggle-bar-height;
+        transition: all 0.5s;
+        width: 100%;
+      }
+      .nav-toggle-bar {
+        margin-top: 0;
+      }
+      .nav-toggle-bar::after {
+        margin-top: 2.5 * $nav-toggle-bar-height;
+      }
+      .nav-toggle-bar::before {
+        margin-top: -2.5 * $nav-toggle-bar-height;
+      }
+      &.expanded .nav-toggle-bar {
+        background: transparent;
+      }
+      &.expanded .nav-toggle-bar::after,
+      &.expanded .nav-toggle-bar::before {
+        background: #fff;
+        margin-top: 0;
+      }
+      &.expanded .nav-toggle-bar::after {
+        @include transform(rotate(45deg));
+      }
+      &.expanded .nav-toggle-bar::before {
+        @include transform(rotate(-45deg));
+      }
+    }
+    & .nav {
+      background: $nav-background;
+      color: contrast-color($nav-background);
+      cursor: pointer;
+      display: flex;
+      font-size: 2rem;
+      height: 100vh !important;
+      padding: 6rem 2rem 2rem 2rem;
+      position: fixed;
+      top: 0;
+      transition: left 0.5s;
+      z-index: $nav-z-index;
+      &.expanded {
+        left: 0;
+      }
+      width: 100vw !important;
+    }
+    & .links {
+      display: none;
+      transform: translateY(-100%);
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto 0;
+      padding: 0;
+      background-color: $pink-color;
+      transition: all 0.8s ease;
+
+      & .link {
+        & a {
+          color: #fff;
+          text-align: left;
+          font-size: 1.2rem;
+          &:hover {
+            color: #fff;
+          }
+        }
+        width: 80vw;
+        margin: 1rem;
+        @include trans-ease;
+      }
+
+      &.expanded {
+        transform: translateY(0%);
+      }
+    }
+  }
+}

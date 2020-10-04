@@ -1,0 +1,29 @@
+#find-derma {
+  &.toot-tip {
+    background-color: rgba($color: $pink-color, $alpha: 0.4) !important;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.mapboxgl-popup-content {
+  min-width: 220px;
+  padding: 1rem;
+  & h5 {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  & a {
+    text-decoration: none;
+    color: $grey-color3;
+    font-size: 0.7rem;
+    display: flex;
+    margin: 0.5rem 0;
+    & i {
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+      color: $pink-color;
+    }
+  }
+}

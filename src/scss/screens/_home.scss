@@ -1,0 +1,112 @@
+#home {
+  height: 75vh;
+  padding: 0;
+
+  & .wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .left {
+      & .btns {
+        margin: 3rem 0 2rem;
+        display: flex;
+
+        & a {
+          text-decoration: none;
+          text-transform: uppercase;
+
+          & .btn1,
+          & .btn2 {
+            height: 40px;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            width: auto;
+            background-color: $pink-color;
+            text-align: center;
+            & h3 {
+              font-weight: normal;
+              color: #fff;
+              font-size: 1rem;
+            }
+
+            @include trans-ease;
+            &:hover {
+              transform: scale(0.95);
+            }
+          }
+        }
+
+        & a {
+          & .btn2 {
+            background-color: #fff;
+            border: 1.5px solid $pink-color;
+            & h3 {
+              color: $pink-color;
+            }
+            &:hover {
+              background-color: $pink-color;
+              transform: scale(1);
+
+              & h3 {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    & .right {
+      margin-left: 5rem;
+      & img {
+        height: 450px;
+        width: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  #home {
+    height: 75vh;
+    padding: 0;
+
+    & .wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & .left {
+        order: 2;
+        & h1 {
+          padding-top: 3rem;
+          text-align: center;
+        }
+        & .btns {
+          margin: 3rem 0 2rem;
+          flex-direction: column;
+          align-items: center;
+          & a {
+            & .btn1,
+            & .btn2 {
+              height: 40px;
+              margin: 0.5rem 0rem;
+              padding: 0.5rem 1rem;
+              min-width: 68vw;
+              width: auto;
+            }
+          }
+        }
+      }
+      & .right {
+        order: 1;
+        margin-left: 0rem;
+        & img {
+          height: 220px;
+        }
+      }
+    }
+  }
+}

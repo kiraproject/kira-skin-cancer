@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import "./helper/constants";
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  ::-moz-selection {
+    color: #fff;
+    background: rgba($color: $pink-color, $alpha: 0.6);
+  }
+
+  ::selection {
+    color: #fff;
+    background: rgba($color: $pink-color, $alpha: 0.6);
+  }
+}
+
+.padded-content {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 3rem 2.8rem;
+}
+
+body::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $pink-color;
+  outline: 1px solid slategrey;
+}
+
+@media screen and (max-width: 700px) {
+  .padded-content {
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@import "./helper/components";
+@import "./helper/navbar";
+@import "./screens/home";
+@import "./screens/find_derma";
+@import "./screens/get_tested";
+@import "./info/disease_frame";
+@import "./info/all_diseases";

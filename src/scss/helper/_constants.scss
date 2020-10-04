@@ -1,0 +1,20 @@
+$pink-color: #ff2e63;
+$green-color: #5efc9e;
+$purple-color: #9181f2;
+
+$grey-color1: rgba(#000, 0.7);
+$grey-color2: rgba(#000, 0.5);
+$grey-color3: rgba(#777, 1);
+$dark-color: #000;
+
+// Mixins
+@mixin trans-ease($time: 200ms, $func: ease) {
+  transition: all $time $func;
+}
+
+@mixin flex($dir: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}

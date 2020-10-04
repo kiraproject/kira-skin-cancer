@@ -1,0 +1,156 @@
+#get-tested {
+  min-height: 75vh;
+
+  & .inputframe {
+    & .middle-section {
+      padding: 1rem;
+      min-height: 40vh;
+      margin-bottom: 0;
+      @include flex($justify: space-between, $align: flex-start);
+      & .left {
+        height: 50vh;
+        width: 35vw;
+        & img {
+          height: 300px;
+          width: auto;
+          object-fit: contain;
+        }
+      }
+      & .right {
+        height: 50vh;
+        width: 35vw;
+
+        & .container {
+          height: 50vh;
+          @include flex($align: center);
+        }
+
+        & .predictions {
+          height: 40vh;
+
+          @include flex($dir: column, $align: flex-start, $justify: center);
+          & .prediction {
+            margin: 0.5rem 0;
+            width: 35vw;
+
+            @include flex($justify: space-between);
+
+            &.green-pred {
+              & h4 {
+                color: $green-color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & .third-section {
+      & .btns {
+        margin: 1.5rem 0;
+        display: flex;
+
+        .btn-1-wrapper {
+          @include flex($dir: column, $align: flex-start);
+        }
+        & div {
+          text-decoration: none;
+          text-transform: uppercase;
+
+          & .btn2 {
+            height: 40px;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            width: auto;
+            background-color: $pink-color;
+            text-align: center;
+            & h3 {
+              font-weight: normal;
+              color: #fff;
+              font-size: 1rem;
+            }
+
+            @include trans-ease;
+            &:hover {
+              transform: scale(0.95);
+            }
+          }
+        }
+
+        & div {
+          & .btn2 {
+            cursor: pointer;
+            background-color: #fff;
+            border: 1.5px solid $pink-color;
+            & h3 {
+              color: $pink-color;
+            }
+            &:hover {
+              background-color: $pink-color;
+              transform: scale(1);
+
+              & h3 {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  #get-tested {
+    min-height: 75vh;
+
+    & .inputframe {
+      & .middle-section {
+        padding: 1rem 0;
+        @include flex($dir: column, $justify: center, $align: flex-start);
+        & .left {
+          height: auto;
+          width: 100%;
+          & img {
+            width: 100%;
+          }
+        }
+        & .right {
+          height: auto;
+          width: 100%;
+
+          & .container {
+            height: 15vh;
+            width: 100%;
+          }
+
+          & .predictions {
+            height: auto;
+            width: 100%;
+            padding: 1rem 0;
+
+            @include flex($dir: column, $align: flex-start, $justify: center);
+            & .prediction {
+              margin: 0.5rem 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      & .third-section {
+        & .btns {
+          margin: 1.5rem 0;
+          @include flex($dir: column, $justify: center, $align: center);
+
+          & div {
+            & .btn2 {
+              margin: 1rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
